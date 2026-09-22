@@ -1,142 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jagrati Digital — social media marketing, content, landing pages and websites for growing businesses.">
-  <title>Jagrati Digital | Social Media & Web Solutions</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SmileCare Dental Studio — a premium dental clinic website concept by Jagrati Digital." />
+  <title>SmileCare Dental Studio | Premium Dental Care</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#102a2e; --muted:#617276; --teal:#087f7a; --teal-dark:#05645f;
+      --mint:#e9f7f5; --cream:#f8fbfa; --white:#fff; --line:#dcebea;
+      --shadow:0 20px 60px rgba(16,42,46,.10); --radius:24px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{width:100%;display:block}
+    .container{width:min(1160px,92%);margin:auto}
+    .topbar{background:var(--ink);color:#dceeed;font-size:13px;padding:9px 0}
+    .topbar .container{display:flex;justify-content:space-between;gap:20px}
+    header{position:sticky;top:0;z-index:20;background:rgba(248,251,250,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,235,234,.8)}
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.4px}
+    .logo-mark{width:42px;height:42px;border-radius:14px;background:var(--teal);display:grid;place-items:center;color:white;font-size:21px;box-shadow:0 8px 22px rgba(8,127,122,.25)}
+    .logo span{font-family:"Playfair Display",serif;font-size:22px}
+    .navlinks{display:flex;gap:30px;align-items:center;font-size:14px;font-weight:600;color:#41565a}
+    .navlinks a:hover{color:var(--teal)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;border-radius:999px;padding:13px 21px;font-weight:700;font-family:inherit;transition:.25s}
+    .btn-primary{background:var(--teal);color:#fff;box-shadow:0 10px 25px rgba(8,127,122,.22)}
+    .btn-primary:hover{background:var(--teal-dark);transform:translateY(-2px)}
+    .btn-light{background:#fff;border:1px solid var(--line);color:var(--ink)}
+    .menu{display:none;background:none;border:0;font-size:25px}
+    .hero{padding:76px 0 60px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:64px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--teal);background:var(--mint);padding:8px 13px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(46px,6vw,74px);line-height:1.02;letter-spacing:-2.4px;margin:20px 0}
+    h1 em{font-style:normal;color:var(--teal)}
+    .hero p{font-size:17px;color:var(--muted);max-width:560px}
+    .hero-actions{display:flex;gap:12px;margin:30px 0 25px;flex-wrap:wrap}
+    .trust{display:flex;gap:25px;color:#587075;font-size:13px;font-weight:600;flex-wrap:wrap}
+    .trust span:before{content:"✓";color:var(--teal);font-weight:900;margin-right:7px}
+    .hero-visual{position:relative}
+    .hero-image{height:550px;object-fit:cover;border-radius:34px;box-shadow:var(--shadow)}
+    .floating-card{position:absolute;left:-35px;bottom:30px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 20px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center}
+    .avatar{width:44px;height:44px;border-radius:50%;object-fit:cover}
+    .rating{font-size:12px;color:#6b7b7d}.stars{color:#e7a83d;letter-spacing:2px}
+    section{padding:88px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:38px}
+    .kicker{color:var(--teal);font-weight:800;font-size:12px;letter-spacing:1.2px;text-transform:uppercase}
+    h2{font-family:"Playfair Display",serif;font-size:clamp(34px,4vw,48px);line-height:1.1;margin-top:8px;letter-spacing:-1px}
+    .section-head p{max-width:470px;color:var(--muted)}
+    .services{background:#fff}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:28px;transition:.25s}
+    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .icon{width:50px;height:50px;border-radius:15px;background:var(--mint);display:grid;place-items:center;color:var(--teal);font-size:23px;margin-bottom:23px}
+    .card h3{font-size:19px;margin-bottom:8px}
+    .card p{color:var(--muted);font-size:14px}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+    .about-photo{height:540px;object-fit:cover;border-radius:30px}
+    .about-copy p{color:var(--muted);margin:18px 0}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+    .stat{padding:18px;background:#fff;border:1px solid var(--line);border-radius:18px}
+    .stat strong{font-size:25px;display:block;color:var(--teal)}
+    .stat small{color:var(--muted)}
+    .process{background:var(--ink);color:#fff}
+    .process .kicker{color:#8edbd6}
+    .process .section-head p{color:#b9cecf}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:25px;background:rgba(255,255,255,.04)}
+    .step-no{font-size:12px;color:#8edbd6;font-weight:800;letter-spacing:1px}
+    .step h3{margin:25px 0 8px}.step p{color:#b9cecf;font-size:14px}
+    .doctor{background:#eef8f6}
+    .doctor-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .doctor-photo{height:570px;object-fit:cover;border-radius:30px}
+    .quote{font-family:"Playfair Display",serif;font-size:25px;line-height:1.35;margin:25px 0;color:#25484b}
+    .credentials{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-size:12px;font-weight:700}
+    .testimonials{background:#fff}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .testimonial{padding:28px;border:1px solid var(--line);border-radius:22px;background:#fbfdfd}
+    .testimonial .stars{margin-bottom:18px}.testimonial p{color:#52676b;font-size:15px;margin-bottom:20px}
+    .person{display:flex;gap:11px;align-items:center;font-weight:700;font-size:14px}
+    .person img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+    .appointment{padding:0 0 90px}
+    .booking{background:var(--teal);color:#fff;border-radius:32px;padding:54px;display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;box-shadow:0 25px 70px rgba(8,127,122,.22)}
+    .booking h2{color:#fff}.booking p{color:#d7f0ee;margin:18px 0 25px}
+    .contact-mini{display:grid;gap:12px;font-size:14px}
+    form{background:#fff;border-radius:22px;padding:25px;color:var(--ink);display:grid;gap:13px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    label{font-size:12px;font-weight:800;color:#53676a}
+    input,select,textarea{width:100%;border:1px solid var(--line);background:#fbfdfd;border-radius:12px;padding:13px;font:inherit;font-size:14px;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(8,127,122,.08)}
+    textarea{min-height:90px;resize:vertical}
+    form .btn{width:100%;margin-top:4px}
+    footer{background:#071d20;color:#c5d5d6;padding:55px 0 25px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px}
+    footer .logo{color:#fff;margin-bottom:15px}.footer-copy{font-size:13px;max-width:320px;color:#91aaac}
+    footer h4{color:#fff;margin-bottom:13px;font-size:14px}footer a{display:block;font-size:13px;margin:9px 0;color:#91aaac}
+    .copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:35px;padding-top:20px;font-size:12px;display:flex;justify-content:space-between;gap:20px}
+    .badge{color:#8edbd6}
+    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;background:#16a56c;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:25px;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+    .notice{font-size:11px;color:#74878a;margin-top:10px}
+    @media(max-width:900px){
+      .navlinks{display:none}.menu{display:block}.navlinks.open{display:flex;position:absolute;top:78px;left:0;right:0;background:#fff;padding:22px;flex-direction:column;border-bottom:1px solid var(--line)}
+      .hero-grid,.about-grid,.doctor-grid,.booking{grid-template-columns:1fr}.hero{padding-top:48px}.hero-image{height:450px}.floating-card{left:15px}
+      .cards,.testimonial-grid{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:600px){
+      .topbar .container{justify-content:center}.topbar .hide-mobile{display:none}
+      nav{height:68px}.navlinks.open{top:68px}.hero{padding:38px 0 40px}h1{font-size:45px;letter-spacing:-1.5px}.hero-image{height:390px}.floating-card{bottom:15px}
+      section{padding:65px 0}.section-head{display:block}.section-head p{margin-top:15px}.cards,.testimonial-grid,.process-grid,.stats{grid-template-columns:1fr}
+      .about-photo,.doctor-photo{height:420px}.booking{padding:30px 20px;border-radius:25px}.row{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}.copyright{display:block}.copyright span{display:block;margin-top:8px}
+    }
+  </style>
 </head>
 <body>
-  <div class="announcement">Now accepting a limited number of new projects · <a href="#contact">Book a free audit →</a></div>
+  <div class="topbar">
+    <div class="container">
+      <span>New patients welcome · Same-week appointments available</span>
+      <span class="hide-mobile">Mon–Sat · 9:00 AM–7:00 PM · Lucknow</span>
+    </div>
+  </div>
 
-  <header class="nav">
-    <a class="brand" href="#top" aria-label="Jagrati Digital home">
-      <span class="brand-mark">J</span>
-      <span>Jagrati<span>Digital</span></span>
-    </a>
-    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav id="mainNav">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#process">Process</a>
-      <a href="#about">About</a>
-      <a class="nav-cta" href="#contact">Let's talk</a>
-    </nav>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#home"><div class="logo-mark">✦</div><span>SmileCare</span></a>
+        <div class="navlinks" id="navlinks">
+          <a href="#services">Services</a><a href="#about">About</a><a href="#doctor">Doctor</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+        </div>
+        <a class="btn btn-primary" href="#appointment">Book Visit</a>
+        <button class="menu" id="menu" aria-label="Open menu">☰</button>
+      </nav>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero section">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">SOCIAL MEDIA · WEB · CONTENT</p>
-        <h1>Make your business <em>impossible</em> to ignore.</h1>
-        <p class="hero-text">Jagrati Digital helps growing businesses look better online, attract the right audience and turn attention into enquiries.</p>
-        <div class="hero-actions">
-          <a class="btn btn-dark" href="#contact">Get a free audit <span>↗</span></a>
-          <a class="text-link" href="#work">View selected work <span>↓</span></a>
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">✦ Modern dentistry · Gentle care</div>
+          <h1>A healthier smile starts with <em>better care.</em></h1>
+          <p>A premium dental experience designed around comfort, clarity, and long-term oral health — from routine cleanings to complete smile transformations.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#appointment">Book an Appointment →</a>
+            <a class="btn btn-light" href="#services">Explore Services</a>
+          </div>
+          <div class="trust"><span>Digital diagnostics</span><span>Gentle treatment</span><span>Transparent care</span></div>
         </div>
-        <div class="trust-row">
-          <span>✦ Strategy-led</span><span>✦ Mobile-first</span><span>✦ Built for growth</span>
+        <div class="hero-visual">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=85" alt="Modern dental care">
+          <div class="floating-card">
+            <img class="avatar" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=120&q=80" alt="Dentist">
+            <div><strong>Dr. Ananya Mehta</strong><div class="rating"><span class="stars">★★★★★</span> 4.9 · Demo profile</div></div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-art reveal">
-        <div class="orb"></div>
-        <div class="dashboard-card">
-          <div class="dash-top"><span>JAGRATI DIGITAL</span><span>↗</span></div>
-          <div class="mini-label">DIGITAL PRESENCE</div>
-          <div class="dash-title">From scrolling<br><strong>to action.</strong></div>
-          <div class="metric"><div><span>Content</span><b>Consistent</b></div><div><span>Website</span><b>Conversion-ready</b></div></div>
-          <div class="bar"><i></i></div>
-          <div class="dash-bottom"><span>01 — STRATEGY</span><span>02 — CREATE</span><span>03 — GROW</span></div>
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Our services</div><h2>Complete care for every smile.</h2></div>
+          <p>From prevention to restorative and cosmetic dentistry, our services are presented with a patient-first approach.</p>
         </div>
-        <div class="floating-note">Your next<br><strong>best client</strong><br>is online.</div>
+        <div class="cards">
+          <article class="card"><div class="icon">◌</div><h3>Dental Cleaning</h3><p>Professional cleaning and preventive care to help keep your teeth and gums healthy.</p></article>
+          <article class="card"><div class="icon">✧</div><h3>Teeth Whitening</h3><p>A brighter, more confident smile with a personalised cosmetic treatment plan.</p></article>
+          <article class="card"><div class="icon">⌁</div><h3>Root Canal</h3><p>Comfort-focused treatment for damaged or infected teeth with careful aftercare guidance.</p></article>
+          <article class="card"><div class="icon">◇</div><h3>Braces & Aligners</h3><p>Modern orthodontic options designed around your bite, lifestyle, and smile goals.</p></article>
+          <article class="card"><div class="icon">◈</div><h3>Dental Implants</h3><p>Long-term tooth replacement solutions planned with function, comfort, and aesthetics in mind.</p></article>
+          <article class="card"><div class="icon">♡</div><h3>Kids Dentistry</h3><p>Friendly, age-appropriate dental visits that help children build positive oral-health habits.</p></article>
+        </div>
       </div>
     </section>
 
-    <section class="marquee" aria-label="Services">
-      <div>Social Media <span>✦</span> Content Strategy <span>✦</span> Websites <span>✦</span> Landing Pages <span>✦</span> Brand Presence <span>✦</span></div>
-    </section>
-
-    <section id="services" class="section services">
-      <div class="section-head reveal">
-        <p class="eyebrow">WHAT I DO</p>
-        <h2>One digital partner.<br><em>Everything you need.</em></h2>
-      </div>
-      <div class="service-grid">
-        <article class="service-card reveal"><span>01</span><div class="icon">◎</div><h3>Social Media</h3><p>Strategy, content planning and management designed to make your brand consistent and memorable.</p><a href="#contact">Explore service →</a></article>
-        <article class="service-card featured reveal"><span>02</span><div class="icon">✦</div><h3>Content & Canva</h3><p>Scroll-stopping posts, carousels and creative concepts that match your brand instead of looking generic.</p><a href="#contact">Explore service →</a></article>
-        <article class="service-card reveal"><span>03</span><div class="icon">⌁</div><h3>Landing Pages</h3><p>Focused pages with clear messaging and calls-to-action built to turn traffic into enquiries.</p><a href="#contact">Explore service →</a></article>
-        <article class="service-card reveal"><span>04</span><div class="icon">▱</div><h3>Business Websites</h3><p>Clean, responsive websites that give small businesses a professional home on the internet.</p><a href="#contact">Explore service →</a></article>
-        <article class="service-card reveal"><span>05</span><div class="icon">⌕</div><h3>Social Audit</h3><p>A practical review of your profile, content, positioning and conversion opportunities.</p><a href="#contact">Explore service →</a></article>
-        <article class="service-card reveal"><span>06</span><div class="icon">↗</div><h3>Content Strategy</h3><p>A simple content system with pillars, hooks, formats and CTAs so you always know what to post.</p><a href="#contact">Explore service →</a></article>
+    <section id="about">
+      <div class="container about-grid">
+        <img class="about-photo" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=85" alt="Modern dental clinic">
+        <div class="about-copy">
+          <div class="kicker">Why SmileCare</div><h2>Thoughtful dentistry, without the intimidating experience.</h2>
+          <p>SmileCare Dental Studio is a fictional clinic concept created for the Jagrati Digital portfolio. The website demonstrates how a modern dental practice can communicate expertise while keeping the patient journey simple.</p>
+          <p>Every touchpoint — from service discovery to appointment booking — is designed to make the next step obvious and reassuring.</p>
+          <div class="stats">
+            <div class="stat"><strong>10+</strong><small>Years of experience*</small></div>
+            <div class="stat"><strong>4.9/5</strong><small>Sample rating*</small></div>
+            <div class="stat"><strong>6</strong><small>Core services</small></div>
+          </div>
+          <div class="notice">*Sample portfolio content — replace with verified clinic information before launch.</div>
+        </div>
       </div>
     </section>
 
-    <section id="work" class="section work">
-      <div class="section-head reveal">
-        <p class="eyebrow">SELECTED WORK</p>
-        <h2>Proof through <em>possibility.</em></h2>
-        <p class="subhead">These are concept projects created for the Jagrati Digital portfolio. No fake client results—just a clear demonstration of what I can build.</p>
-      </div>
-      <div class="work-grid">
-        <article class="project project-dark reveal">
-          <div class="project-visual salon"><span>BEAUTY<br>STUDIO</span><b>01</b></div>
-          <div class="project-info"><div><small>CONCEPT PROJECT</small><h3>Beauty Studio</h3></div><span>Social + Content ↗</span></div>
-        </article>
-        <article class="project reveal">
-          <div class="project-visual cafe"><span>CAFÉ<br>NOIR</span><b>02</b></div>
-          <div class="project-info"><div><small>CONCEPT PROJECT</small><h3>Café Noir</h3></div><span>Website ↗</span></div>
-        </article>
-        <article class="project reveal">
-          <div class="project-visual fashion"><span>FORM<br>STUDIO</span><b>03</b></div>
-          <div class="project-info"><div><small>CONCEPT PROJECT</small><h3>Fashion Brand</h3></div><span>Landing Page ↗</span></div>
-        </article>
+    <section class="process">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Your visit</div><h2>Simple from first click to follow-up.</h2></div><p>Clear steps reduce friction and help prospective patients feel informed before they arrive.</p></div>
+        <div class="process-grid">
+          <div class="step"><div class="step-no">01 · DISCOVER</div><h3>Choose a service</h3><p>Find the treatment that matches your current dental concern or goal.</p></div>
+          <div class="step"><div class="step-no">02 · BOOK</div><h3>Request a visit</h3><p>Send your preferred date and contact details through the simple form.</p></div>
+          <div class="step"><div class="step-no">03 · CONSULT</div><h3>Meet your dentist</h3><p>Discuss your concerns and receive an appropriate clinical assessment.</p></div>
+          <div class="step"><div class="step-no">04 · CARE</div><h3>Follow your plan</h3><p>Move forward with a treatment plan tailored to your dental needs.</p></div>
+        </div>
       </div>
     </section>
 
-    <section id="process" class="section process">
-      <div class="process-intro reveal"><p class="eyebrow">THE PROCESS</p><h2>Simple.<br><em>Strategic.</em><br>Effective.</h2></div>
-      <div class="steps">
-        <div class="step reveal"><span>01</span><div><h3>Audit</h3><p>We find what is working, what is missing and where your biggest opportunities are.</p></div></div>
-        <div class="step reveal"><span>02</span><div><h3>Strategy</h3><p>We define your positioning, content pillars, visual direction and conversion goal.</p></div></div>
-        <div class="step reveal"><span>03</span><div><h3>Create</h3><p>I turn the strategy into polished content, pages and assets ready to publish.</p></div></div>
-        <div class="step reveal"><span>04</span><div><h3>Optimize</h3><p>We review what gets attention and enquiries, then improve the system over time.</p></div></div>
+    <section class="doctor" id="doctor">
+      <div class="container doctor-grid">
+        <div>
+          <div class="kicker">Meet your dentist</div><h2>Expert care with a human touch.</h2>
+          <p class="quote">“My goal is simple: help every patient understand their options and feel comfortable making informed decisions about their smile.”</p>
+          <p style="color:var(--muted)">Dr. Ananya Mehta is a fictional profile created for this portfolio demonstration. Replace this section with the real dentist's verified qualifications, experience, registration details, and professional photograph.</p>
+          <div class="credentials"><span class="pill">BDS · Demo</span><span class="pill">MDS · Demo</span><span class="pill">Cosmetic Dentistry</span><span class="pill">Patient Education</span></div>
+        </div>
+        <img class="doctor-photo" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1000&q=85" alt="Dentist portrait">
       </div>
     </section>
 
-    <section class="section packages">
-      <div class="section-head reveal"><p class="eyebrow">START SMALL. GROW SMART.</p><h2>Choose your <em>next move.</em></h2></div>
-      <div class="price-grid">
-        <article class="price-card reveal"><p class="plan">STARTER</p><h3>₹2,999</h3><p class="muted">A quick digital refresh for businesses that need direction.</p><ul><li>Instagram audit</li><li>Profile & bio optimization</li><li>10 content ideas</li><li>5 Canva designs</li><li>3 Reel concepts</li></ul><a class="btn btn-outline" href="#contact">Start here</a></article>
-        <article class="price-card price-main reveal"><p class="plan">GROWTH</p><h3>₹7,500<span>/mo</span></h3><p class="muted">A consistent content system built around your business goals.</p><ul><li>Content calendar</li><li>12 social creatives</li><li>Reel concepts</li><li>Captions & CTAs</li><li>Monthly strategy review</li></ul><a class="btn btn-light" href="#contact">Let's grow</a></article>
-        <article class="price-card reveal"><p class="plan">WEB</p><h3>₹5,000+</h3><p class="muted">A focused online presence for a business ready to look professional.</p><ul><li>Responsive landing page</li><li>Modern visual design</li><li>Mobile optimization</li><li>CTA & contact setup</li><li>Basic SEO structure</li></ul><a class="btn btn-outline" href="#contact">Build my page</a></article>
+    <section class="testimonials" id="reviews">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Patient experience</div><h2>Designed to feel reassuring.</h2></div><p>Sample testimonial cards for the portfolio demo. Replace with genuine, permissioned patient reviews for a live clinic.</p></div>
+        <div class="testimonial-grid">
+          <article class="testimonial"><div class="stars">★★★★★</div><p>“The booking process was simple and the clinic information was easy to understand. I knew exactly what to expect before visiting.”</p><div class="person"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt=""><span>Sample Patient<br><small style="color:#7a8b8d;font-weight:500">Portfolio testimonial</small></span></div></article>
+          <article class="testimonial"><div class="stars">★★★★★</div><p>“A clean, calm and professional experience. The treatment options were explained clearly without feeling rushed.”</p><div class="person"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt=""><span>Sample Patient<br><small style="color:#7a8b8d;font-weight:500">Portfolio testimonial</small></span></div></article>
+          <article class="testimonial"><div class="stars">★★★★★</div><p>“The website made it very easy to find the service I needed and request an appointment from my phone.”</p><div class="person"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt=""><span>Sample Patient<br><small style="color:#7a8b8d;font-weight:500">Portfolio testimonial</small></span></div></article>
+        </div>
       </div>
     </section>
 
-    <section id="about" class="section about">
-      <div class="about-mark reveal">JD</div>
-      <div class="about-copy reveal"><p class="eyebrow">ABOUT JAGRATI DIGITAL</p><h2>Small business deserves <em>big-brand thinking.</em></h2><p>I'm Jagrati, the person behind Jagrati Digital. I combine social media strategy, visual content and web design to help businesses create a digital presence that feels clear, modern and trustworthy.</p><p>I believe good digital work shouldn't just look pretty. It should make it easier for the right customer to understand you, trust you and take the next step.</p><div class="signature">Jagrati <span>— Founder, Jagrati Digital</span></div></div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="contact-inner">
-        <p class="eyebrow">LET'S WORK TOGETHER</p>
-        <h2>Ready to make your<br><em>digital presence work harder?</em></h2>
-        <p>Tell me what you're building. I'll help you figure out the smartest next step.</p>
-        <div class="contact-actions">
-          <a class="btn btn-light" href="https://wa.me/918470936735?text=Hi%20Jagrati%20Digital%2C%20I%27d%20like%20a%20free%20digital%20audit." target="_blank" rel="noopener">WhatsApp me ↗</a>
-          <a class="contact-email" href="mailto:jagratisonkar24@gmail.com">jagratisonkar24@gmail.com</a>
+    <section class="appointment" id="appointment">
+      <div class="container">
+        <div class="booking">
+          <div>
+            <div class="kicker" style="color:#a6e3df">Book a visit</div>
+            <h2>Ready to take care of your smile?</h2>
+            <p>Send an appointment request and the clinic team can confirm the available time with you.</p>
+            <div class="contact-mini">
+              <div>☎ +91 90000 00000</div><div>✉ hello@smilecare-demo.in</div><div>⌖ Lucknow, Uttar Pradesh</div>
+            </div>
+          </div>
+          <form id="appointmentForm">
+            <div class="row">
+              <div><label for="name">Full name</label><input id="name" required placeholder="Your name"></div>
+              <div><label for="phone">Phone</label><input id="phone" required placeholder="+91 XXXXX XXXXX"></div>
+            </div>
+            <div class="row">
+              <div><label for="service">Service</label><select id="service"><option>General Consultation</option><option>Dental Cleaning</option><option>Teeth Whitening</option><option>Root Canal</option><option>Braces & Aligners</option><option>Dental Implants</option><option>Kids Dentistry</option></select></div>
+              <div><label for="date">Preferred date</label><input id="date" type="date" required></div>
+            </div>
+            <div><label for="message">Anything we should know?</label><textarea id="message" placeholder="Tell us briefly about your concern..."></textarea></div>
+            <button class="btn btn-primary" type="submit">Request Appointment →</button>
+            <div class="notice" id="formNotice" style="text-align:center">Demo form — connect to the clinic's email/CRM/WhatsApp before launch.</div>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer><div class="brand"><span class="brand-mark">J</span><span>Jagrati<span>Digital</span></span></div><p>Social media · Web · Content</p><p>© <span id="year"></span> Jagrati Digital. Built with intention.</p></footer>
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div><a class="logo" href="#home"><div class="logo-mark">✦</div><span>SmileCare</span></a><p class="footer-copy">A premium dental clinic website concept designed and developed for the Jagrati Digital portfolio.</p></div>
+        <div><h4>Explore</h4><a href="#services">Services</a><a href="#about">About</a><a href="#doctor">Doctor</a><a href="#reviews">Reviews</a></div>
+        <div><h4>Contact</h4><a href="#appointment">Book a visit</a><a href="tel:+919000000000">+91 90000 00000</a><a href="mailto:hello@smilecare-demo.in">Email us</a></div>
+        <div><h4>Hours</h4><a>Mon–Sat · 9 AM–7 PM</a><a>Sunday · Closed</a><a>Lucknow, India</a></div>
+      </div>
+      <div class="copyright"><span>© 2026 SmileCare Dental Studio · Demo Project</span><span class="badge">Built by Jagrati Digital</span></div>
+    </div>
+  </footer>
 
-  <script src="script.js"></script>
+  <a class="whatsapp" href="https://wa.me/919000000000" aria-label="WhatsApp">◔</a>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const nav = document.getElementById('navlinks');
+    menu.addEventListener('click', () => nav.classList.toggle('open'));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+    document.getElementById('appointmentForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('formNotice').textContent =
+        'Thank you! This demo captured the request. Connect the form to email, WhatsApp or a CRM for a live clinic.';
+      document.getElementById('formNotice').style.color = '#087f7a';
+    });
+  </script>
 </body>
 </html>
